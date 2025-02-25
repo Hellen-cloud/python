@@ -8,7 +8,7 @@ class User:
 
 
     def __repr__(self):
-        return f"User( {self.user_id} {self.name} {self.phone})"  #Representation of user Object
+        return f"User ({self.user_id} {self.name} {self.phone})"  #Representation of user Object
 
 class Account:
     def __init__(self,user):
@@ -55,7 +55,7 @@ class Transaction:
     def __repr__(self):
         return f"Transaction  Account {self.account.user.name}, Amount: {self.amount},Type: {self.transaction_type}"
 
-# example usage // object
+# example usage // object/user1
 user1=User(1,"Hellen Gaceri",740123467)
 print(user1)
 
@@ -88,3 +88,19 @@ transaction4=Transaction(user2.account,2200,"withdraw")
 transaction4.process()
 
 print(user2.account)
+
+#user3
+user3=User(3,"Andrew Mekka",743679809)
+print(user3)
+
+user3.account.deposit(20000)
+
+user3.account.withdraw(6500)
+
+transaction4=Transaction(user3.account,40000,"deposit")
+transaction4.process()
+
+transaction5=Transaction(user3.account,22000,"withdraw")
+transaction5.process()
+
+print(user3.account)
